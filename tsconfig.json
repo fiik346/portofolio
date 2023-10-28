@@ -1,10 +1,16 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "/home/taufik/Project/portofolio",
     "paths": {
-      "@components/":["src/components/*"],
-      "@layouts/":["src/layouts/*"]
-    }
+      "@components/": [
+        "src/components/*"
+      ],
+      "@layouts/": [
+        "src/layouts/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }
