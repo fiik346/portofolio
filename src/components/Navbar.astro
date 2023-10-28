@@ -1,0 +1,36 @@
+---
+const nav_links = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Blog",
+    href: "https://nurhidayat.web.id",
+  },
+  {
+    title: "Project",
+    href: "/project",
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+  },
+]
+---
+<header class="sticky top-0 z-10 bg-white">
+  <nav class="flex gap-4 items-center container p-4 mx-auto">
+    <img src="/icon.svg" class="w-10 h-auto"/>
+    <ul class="hidden lg:flex ml-auto">
+      {nav_links.map((item)=>(
+        <li>
+          <a
+            href={item.href}
+            class="text-slate-600 hover:text-primary-600 hover:bg-slate-100 rounded-lg px-5 py-3 flex duration-300"
+          >
+            {item.title}
+          </a>
+        </li>))}
+    </ul>
+  </nav>
+</header>
