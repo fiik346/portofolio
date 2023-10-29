@@ -16,14 +16,13 @@ interface DataInterface {
   };
   author: {
     name: string;
-    avatar?: { baseUrl: string };
+    avatar: { baseUrl: string };
   };
 }
 interface Props {
   data: DataInterface[];
 }
 const { data } = Astro.props;
-import { Image } from "astro:assets";
 ---
 
 <section>
@@ -35,12 +34,14 @@ import { Image } from "astro:assets";
           <div class="w-full">
             <div class="w-full aspect-[40/21] relative">
               <a href={`https://www.nurhidayat.web.id/blog/${item.slug}`}>
-                <Image
+                <img
                   src={item.cover?.baseUrl || "/noimage.png"}
                   alt={item.title}
                   height="630"
                   width="1200"
                   class="object-contain"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
             </div>
@@ -61,11 +62,13 @@ import { Image } from "astro:assets";
           <div class="w-full mt-auto text-sm px-6 py-4 border-t flex items-center gap-4">
             <div>
               <img
-                src={item.author.avatar?.baseUrl}
+                src={item.author.avatar.baseUrl}
                 width={40}
                 height={40}
                 class="rounded-full"
                 alt={item.author.name}
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="text-slate-500">
