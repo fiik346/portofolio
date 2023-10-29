@@ -1,7 +1,7 @@
 ---
 title: Novelindo Web App
-cover: /novelindo/cover.png
-website: https://www.novelindo.my.id
+cover: /images/novelindo/cover.png
+website: https://novelindo.vercel.app
 featured: true
 type: Project
 ---

@@ -1,0 +1,10 @@
+---
+const projects = await Astro.glob("../pages/project/*.md");
+---
+
+<div>
+  {projects.map((project) => <div>
+    <img src={project.frontmatter.cover}/>
+    {project.frontmatter.title}
+  </div>)}
+</div>

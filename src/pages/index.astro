@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import CtaOne from "../components/CtaOne.astro";
 import FeaturedBlog from "../components/FeaturedBlog.astro";
+import FeaturedProject from "../components/FeaturedProject.astro";
 
 export const prerender = true;
 let select = `title,excerpt,description,createdAt,readTime,cover,author(*)`;
@@ -17,6 +18,7 @@ const data = await res.json();
 <Layout title="Taufik Nurhidayat">
   <main class="container mx-auto px-4">
     <About />
+    <FeaturedProject />
     <CtaOne />
     <FeaturedBlog data={data} />
   </main>

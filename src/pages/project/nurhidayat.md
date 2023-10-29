@@ -1,6 +1,6 @@
 ---
 title: "Nurhidayat Blog"
-cover: /nurhidayat/cover.png
+cover: /images/nurhidayat/cover.png
 website: https://www.nurhidayat.web.id
 type: Project
 featured: true
