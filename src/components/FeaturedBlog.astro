@@ -23,6 +23,7 @@ interface Props {
   data: DataInterface[];
 }
 const { data } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
 <section>
@@ -34,9 +35,11 @@ const { data } = Astro.props;
           <div class="w-full">
             <div class="w-full aspect-[40/21] relative">
               <a href={`https://www.nurhidayat.web.id/blog/${item.slug}`}>
-                <img
+                <Image
                   src={item.cover?.baseUrl || "/noimage.png"}
                   alt={item.title}
+                  height="630"
+                  width="1200"
                   class="object-contain"
                 />
               </a>
