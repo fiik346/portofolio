@@ -2,11 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import CtaOne from "../components/CtaOne.astro";
+import BlogArea from "../components/BlogArea";
+import FeaturedBlog from "../components/FeaturedBlog.astro";
+
+export const prerender = true;
+let select = `title,excerpt,description,createdAt,readTime,cover,author(*)`;
+let author_id = `a587dbdf-4abd-46a8-910f-5f8a288f6511`;
+let api_url = `https://wqksirvqsbkygyszndfh.supabase.co/rest/v1/blogs?select=${select}&draft=eq.false&order=publishedAt.desc&author=eq.${author_id}&limit=6&apikey=${
+  import.meta.env.PUBLIC_API_KEY
+}`;
+let res = await fetch(api_url);
+const data = await res.json();
 ---
 
 <Layout title="Taufik Nurhidayat">
   <main class="container mx-auto px-4">
     <About />
     <CtaOne />
+    <FeaturedBlog data={data} />
   </main>
 </Layout>

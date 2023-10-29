@@ -1,0 +1,77 @@
+---
+interface DataInterface {
+  title: string;
+  slug: string;
+  excerpt?: string;
+  description: string;
+  createdAt: string;
+  readTime: {
+    text: string;
+    time: number;
+    words: number;
+    minutes: number;
+  };
+  cover?: {
+    baseUrl: string;
+  };
+  author: {
+    name: string;
+    avatar?: { baseUrl: string };
+  };
+}
+interface Props {
+  data: DataInterface[];
+}
+const { data } = Astro.props;
+---
+
+<section>
+  <h2 class="text-2xl font-bold text-slate-700">Blog</h2>
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+    {
+      data.map((item: DataInterface) => (
+        <div class="border flex flex-wrap hover:shadow-lg duration-300 ease-in-out">
+          <div class="w-full">
+            <div class="w-full aspect-[40/21] relative">
+              <a href={`https://www.nurhidayat.web.id/blog/${item.slug}`}>
+                <img
+                  src={item.cover?.baseUrl || "/noimage.png"}
+                  alt={item.title}
+                  class="object-contain"
+                />
+              </a>
+            </div>
+            <div class="w-full h-auto p-6">
+              <h3 class="text-lg font-semibold">
+                <a
+                  href={`https://www.nurhidayat.web.id/blog/${item.slug}`}
+                  class="text-slate-700 hover:text-slate-800 duration-150"
+                >
+                  {item.title}
+                </a>
+              </h3>
+              <p class="mt-2 text-slate-500 line-clamp-5">
+                {item.excerpt || item.description}
+              </p>
+            </div>
+          </div>
+          <div class="w-full mt-auto text-sm px-6 py-4 border-t flex items-center gap-4">
+            <div>
+              <img
+                src={item.author.avatar?.baseUrl}
+                width={40}
+                height={40}
+                class="rounded-full"
+                alt={item.author.name}
+              />
+            </div>
+            <div class="text-slate-500">
+              <div>{item.author.name}</div>
+              <div>{item.readTime.text}</div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
