@@ -1,6 +1,7 @@
 ---
 import {Image} from "astro:assets"
 import profile_image from "../images/profile.png"
+import {button_style} from "../style/button"
 ---
 
 <section class="flex flex-wrap lg:flex-nowrap gap-4 lg:gap-8 items-center">
@@ -39,7 +40,7 @@ import profile_image from "../images/profile.png"
 
     <div class="mt-8 flex gap-4 flex-wrap items-center text-sm">
       <a
-        class="duration-300 inline-flex items-center px-4 py-3 rounded bg-primary-500 text-white hover:shadow-lg hover:shadow-primary-600/50 hover:bg-primary-600"
+        class={button_style.primary}
         href="mailto:taufik@nurhidayat.web.id"
       >
         <svg
@@ -60,7 +61,7 @@ import profile_image from "../images/profile.png"
         <span class="ml-2">Email Me</span>
       </a>
       <a
-        class="duration-300 inline-flex items-center px-4 py-3 rounded hover:text-slate-500 hover:bg-slate-100"
+        class={button_style.ghost}
         href="/cv.pdf"
       >
         <svg

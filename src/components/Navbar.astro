@@ -1,4 +1,5 @@
 ---
+import { button_style } from "src/style/button";
 const nav_links = [
   {
     title: "Home",
@@ -16,21 +17,40 @@ const nav_links = [
     title: "Contact",
     href: "/contact",
   },
-]
+];
 ---
-<header class="bg-white">
+
+<header class="bg-white sticky top-0 z-30">
   <nav class="flex gap-4 items-center container p-4 mx-auto">
-    <img src="/icon.svg" class="w-10 h-auto"/>
+    <img src="/icon.svg" class="w-10 h-auto" />
+    <button class={`${button_style.ghost} ml-auto lg:hidden`}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+      </svg>
+    </button>
     <ul class="hidden lg:flex ml-auto">
-      {nav_links.map((item)=>(
-        <li>
-          <a
-            href={item.href}
-            class="text-slate-600 hover:text-primary-600 hover:bg-slate-100 rounded-lg px-5 py-3 flex duration-300"
-          >
-            {item.title}
-          </a>
-        </li>))}
+      {
+        nav_links.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-slate-600 hover:text-primary-600 hover:bg-slate-100 rounded-lg px-5 py-3 flex duration-300"
+            >
+              {item.title}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </header>

@@ -1,4 +1,8 @@
-<section class="my-20">
+---
+import { button_style } from "../style/button";
+---
+
+<section>
   <div class="bg-slate-100 md:flex items-center p-8">
     <div class="text-xl font-bold text-slate-600 text-center md:text-left">
       Tertarik dengan pekerjaan saya?
@@ -6,15 +10,10 @@
     <div
       class="ml-auto mt-8 md:mt-0 flex justify-center gap-4 md:w-auto text-sm"
     >
-      <a
-        href="/project"
-        class="duration-300 inline-flex items-center px-4 py-3 rounded text-primary-500 border border-primary-500"
-      >
-        More Project
-      </a>
+      <a href="/project" class={button_style.primary_outline}> More Project</a>
       <a
         href="mailto:taufik@nurhidayat.web.id"
-        class="duration-300 inline-flex items-center px-4 py-3 rounded bg-primary-500 text-white hover:shadow-lg hover:shadow-primary-600/50 hover:bg-primary-600"
+        class={button_style.primary}
       >
         Email Me
       </a>
