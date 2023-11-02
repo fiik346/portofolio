@@ -6,6 +6,7 @@ interface Props {
   description?: string;
 }
 
+const url = "https://taufik.nurhidayat.web.id";
 const { title, description } = Astro.props;
 ---
 
@@ -21,6 +22,7 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <link rel="canonical" href={new URL(url, Astro.site)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
