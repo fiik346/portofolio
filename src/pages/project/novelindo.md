@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/ProjectLayout.astro
 title: Novelindo Web App
 cover: /images/novelindo/cover.png
 website: https://novelindo.vercel.app

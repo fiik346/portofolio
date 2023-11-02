@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/ProjectLayout.astro
 title: "Nurhidayat Blog"
 cover: /images/nurhidayat/cover.png
 website: https://www.nurhidayat.web.id
@@ -59,3 +60,6 @@ Untuk halaman yang sering berubah seperti halaman utama dan index artikel, saya 
 Untuk halaman yang hampir tidak diubah seperti halaman privacy policy, cookies policy dll saya menggunakan teknik static rendering. Meski sangat cepat dimuat namun, ketika halaman akan diperbarui memerlukan deploy ulang.
 
 ## Fitur Unggulan
+1. Waktu muat yang cepat karena menggunakan mekanisme hybrid.
+2. UI yang sederhana dan Experience yang luar biasa bagi pengguna.
+3. SEO Optimized.

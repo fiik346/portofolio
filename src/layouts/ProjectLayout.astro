@@ -1,5 +1,15 @@
 ---
 import Layout from "./Layout.astro";
+import type { MarkdownLayoutProps } from "astro";
+type Props = MarkdownLayoutProps<{
+  title: string;
+  cover: string;
+}>;
+const { frontmatter, url, compiledContent } = Astro.props;
 ---
 
-<Layout title="Project" />
+<Layout title={frontmatter.title}>
+  <article class="prose mx-auto py-10">
+    <slot />
+  </article>
+</Layout>
