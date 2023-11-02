@@ -23,7 +23,10 @@ const nav_links = [
 <header class="bg-white sticky top-0 z-30">
   <nav class="flex gap-4 items-center container p-4 mx-auto">
     <img src="/icon.svg" class="w-10 h-auto" />
-    <button class={`${button_style.ghost} ml-auto lg:hidden`}>
+    <button
+      class={`${button_style.ghost} ml-auto lg:hidden`}
+      data-toggle-button
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -54,3 +57,47 @@ const nav_links = [
     </ul>
   </nav>
 </header>
+<nav
+  id="mobile_nav"
+  class="fixed bg-white text-slate-600 top-0 left-0 bottom-0 right-0 z-30 hidden"
+>
+  <div class="flex pt-4">
+    <button class={`${button_style.ghost} ml-auto mr-4`} data-toggle-button>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+  <div>
+    {
+      nav_links.map((item) => (
+        <a
+          href={item.href}
+          class="flex px-8 py-3 justify-center hover:text-primary-500 notap"
+        >
+          {item.title}
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<script>
+  const menu = document.getElementById("mobile_nav");
+  const buttons = document.querySelectorAll("[data-toggle-button]");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      menu?.classList.toggle("hidden");
+    });
+  });
+</script>

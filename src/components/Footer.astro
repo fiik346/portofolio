@@ -1,0 +1,72 @@
+---
+import {Image} from "astro:assets";
+import brand from "../images/brand.svg";
+
+const navigations = [
+    {
+      title: "Navigation",
+      items: [
+        {
+          title: "About",
+          href: "/about",
+        },
+
+        {
+          title: "Contact",
+          href: "/contact",
+        },
+        {
+          title: "Project",
+          href: "/project",
+        },
+      ],
+    },
+    {
+      title: "Connect",
+      items: [
+        {
+          title: "Blog",
+          href: "https://www.nurhidayat.web.id",
+        },
+        {
+          title: "Facebook",
+          href: "https://facebook.com/fik346",
+        },
+        {
+          title: "GitHub",
+          href: "https://github.com/fiik346",
+        },
+        {
+          title: "Linkedin",
+          href: "https://linkedin.com/in/taufik-nurhidayat",
+        },
+      ],
+    },
+  ];
+---
+    <div class="bg-slate-100 text-slate-600">
+      <div class="container mx-auto px-4 py-8">
+        <nav class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div>
+            <Image src={brand} class="w-10" alt="Nurhidayat" />
+          </div>
+          {navigations.map((nav ) => (
+            <div>
+              <h3 class="font-semibold">{nav.title}</h3>
+              <ul class="mt-2">
+                {nav.items.map((item) => (
+                  <li>
+                    <a
+                      class="py-1 flex hover:text-slate-800"
+                      href={item.href}
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </nav>
+      </div>
+    </div>

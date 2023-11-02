@@ -1,48 +1,39 @@
 ---
-import {Image} from "astro:assets"
-import profile_image from "../images/profile.png"
-import {button_style} from "../style/button"
+import { Image } from "astro:assets";
+import profile_image from "../images/profile.png";
+import profile_image_square from "../images/profile-square.png";
+import { button_style } from "../style/button";
 ---
 
-<section class="flex flex-wrap lg:flex-nowrap gap-4 lg:gap-8 items-center">
+<section class="flex flex-wrap lg:flex-nowrap gap-8 items-center">
   <div
     class="w-full lg:w-5/12 px-10 md:p-8 flex items-center justify-center lg:order-last"
   >
     <div>
-      <Image src={profile_image} alt="Taufik Nurhidayat" />
+      <Image
+        class="hidden lg:block"
+        src={profile_image}
+        alt="Taufik Nurhidayat"
+      />
+      <Image
+        class="lg:hidden"
+        src={profile_image_square}
+        alt="Taufik Nurhidayat"
+      />
     </div>
   </div>
   <div class="w-full lg:w-7/12 text-slate-700">
     <p class="text-xl">Hi, saya Taufik Nurhidayat</p>
-    <h1 class="text-4xl mt-2 font-bold">Frontend Web Developer dan Writer</h1>
+    <h1 class="text-4xl mt-2 font-bold">Frontend Developer dan Writer</h1>
     <p class="text-slate-600 mt-8">
-      Saya adalah seorang frontend developer yang juga memiliki hasrat dalam
-      dunia tulisan. Mulai mengembangkan web{" "}
-      <a class="text-slate-800 hover:underline" href="//Nurhidayat.web.id">
-        Nurhidayat
-      </a>
-       , lalu mengisinya dengan konten yang berkualitas. Selain itu saya juga
-      menulis untuk <a
-        class="text-slate-800 hover:underline"
-        href="//play.id"
-        rel="nofollow"
-      >
-        Play.id
-      </a> dan <a
-        href="//dewabiz.com"
-        rel="nofollow"
-        class="text-slate-800 hover:underline"
-      >
-        Dewabiz
-      </a>
-       .
+      Seorang Freelance Frontend Developer yang juga memiliki hasrat dalam dunia
+      tulisan. Berpengalaman dalam mengembangkan web dengan fokus pada Next.js,
+      React, TailwindCSS dan TypeScript. Berdediskasi untuk menciptakan user
+      experience yang luar biasa dan terus mempelajari teknologi baru.
     </p>
 
     <div class="mt-8 flex gap-4 flex-wrap items-center text-sm">
-      <a
-        class={button_style.primary}
-        href="mailto:taufik@nurhidayat.web.id"
-      >
+      <a class={button_style.primary} href="mailto:taufik@nurhidayat.web.id">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -60,10 +51,7 @@ import {button_style} from "../style/button"
 
         <span class="ml-2">Email Me</span>
       </a>
-      <a
-        class={button_style.ghost}
-        href="/cv.pdf"
-      >
+      <a class={button_style.ghost} href="/cv.pdf">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
